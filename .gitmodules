@@ -1,0 +1,15 @@
+[submodule "runner/js-runner"]
+	path = runner/js-runner
+	url = git@github.com:ajuvercr/js-runner.git
+[submodule "runner/nifi-runner"]
+	path = runner/nifi-runner
+	url = https://github.com/ajuvercr/nifi-runner
+[submodule "runner/rml-runner"]
+	path = runner/rml-runner
+	url = https://github.com/ajuvercr/rml-runner
+[submodule "processor/sds-storage-writer-mongo"]
+	path = processor/sds-storage-writer-mongo
+	url = https://github.com/TREEcg/sds-storage-writer-mongo
+[submodule "processor/sds-processors"]
+	path = processor/sds-processors
+	url = git@github.com:ajuvercr/sds-processors.git
