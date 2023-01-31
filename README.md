@@ -2,7 +2,7 @@
 
 This is the connector architecture mono repo, here everything is explained and linked together using GitHub submodules and the GitHub wiki.
 
-Most is explained in the GitHub wiki, but some useful links can be found here:
+Most is explained in the GitHub wiki, but some useful links can be found here: [wiki](https://github.com/TREEcg/connector-architecture/wiki).
 
 
 
