@@ -1,0 +1,37 @@
+@prefix : <https://w3id.org/conn#> .
+@prefix sh: <http://www.w3.org/ns/shacl#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+:KafkaChannel a :Channel;
+    :reader :KafkaReaderChannel;
+    :writer :KafkaWriterChannel.
+
+
+<kafkaTopicProperty> sh:datatype xsd:string;
+      sh:path :kafkaTopic;
+      sh:name "topic";
+      sh:description "Topic used".
+
+<kafkaBrokerProperty> sh:datatype xsd:string;
+      sh:path :kafkaBroker;
+      sh:name "broker";
+      sh:description "Broker used".
+
+<kafkaGroupProperty> sh:datatype xsd:string;
+      sh:path :kafkaGroup;
+      sh:name "group";
+      sh:description "Group used".
+
+<kafkaFromBeginningProperty> sh:datatype xsd:boolean;
+      sh:path :kafkaFromBeginning;
+      sh:name "from beginning";
+      sh:description "Should the reader read from the start or continue?".
+
+:KafkaReaderChannelShape a sh:NodeShape;
+    sh:targetClass :KafkaReaderChannel;
+    sh:property <kafkaTopicProperty>, <kafkaBrokerProperty>, <kafkaGroupProperty>, <kafkaFromBeginningProperty>.
+
+:KafkaReaderChannelShape a sh:NodeShape;
+    sh:targetClass :KafkaReaderChannel;
+    sh:property <kafkaTopicProperty>, <kafkaBrokerProperty>.
+

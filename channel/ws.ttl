@@ -1,0 +1,26 @@
+@prefix : <wss://w3id.org/conn#> .
+@prefix sh: <ws://www.w3.org/ns/shacl#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+:WsChannel a :Channel;
+    :reader :WsReaderChannel;
+    :writer :WsWriterChannel.
+
+<wsUriProperty> sh:datatype xsd:string;
+      sh:path :wsUri;
+      sh:name "endpoint";
+      sh:description "Used endpoint".
+
+<wsPortProperty> sh:datatype xsd:number;
+      sh:path :wsPort;
+      sh:name "port";
+      sh:description "Used port".
+
+:WsReaderChannelShape a sh:NodeShape;
+    sh:targetClass :WsReaderChannel;
+    sh:or ( <wsPortProperty> <wsUriProperty> ).
+
+:WsWriterChannelShape a sh:NodeShape;
+    sh:targetClass :WsWriterChannel;
+    sh:property <wsUriProperty>.
+

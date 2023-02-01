@@ -1,0 +1,36 @@
+@prefix : <https://w3id.org/conn#> .
+@prefix sh: <http://www.w3.org/ns/shacl#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+:FileChannel a :Channel;
+    :reader :FileReaderChannel;
+    :writer :FileWriterChannel.
+
+<pathProperty> sh:datatype xsd:string;
+      sh:path :filePath;
+      sh:name "path";
+      sh:description "Path of the used file".
+
+<onReplaceProperty> sh:datatype xsd:boolean;
+      sh:path :fileOnReplace;
+      sh:name "on replace";
+      sh:description "Boolean indicating if the files is always replaced, or appended to".
+
+<fileEncodingProperty> sh:datatype xsd:boolean;
+      sh:path :fileEncoding;
+      sh:name "Encoding";
+      sh:description "The encoding used for the file".
+
+<fileReadFirstContentProperty> sh:datatype xsd:boolean;
+      sh:path :fileReadFirstContent;
+      sh:name "Read first content";
+      sh:description "Boolean indicating whether or not the initial content is also a message".
+
+:FileReaderChannelShape a sh:NodeShape;
+    sh:targetClass :FileReaderChannel;
+    sh:property <pathProperty>, <onReplaceProperty>, <fileReadFirstContentProperty>, <fileEncodingProperty>.
+
+:FileWriterChannelShape a sh:NodeShape;
+    sh:targetClass :FileWriterChannel;
+    sh:property <pathProperty>, <onReplaceProperty>, <fileReadFirstContentProperty>, <fileEncodingProperty>.
+
