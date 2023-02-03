@@ -1,0 +1,25 @@
+{
+  "name": "validator",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "build": "npx tsc",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@treecg/types": "^0.4.0",
+    "@types/n3": "^1.10.4",
+    "@types/node": "^18.11.18",
+    "@types/rdf-validate-shacl": "^0.4.0",
+    "n3": "^1.16.3",
+    "node-fetch": "^3.3.0",
+    "rdf-validate-shacl": "^0.4.5"
+  },
+  "devDependencies": {
+    "typescript": "^4.9.5"
+  }
+}

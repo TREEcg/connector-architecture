@@ -1,0 +1,27 @@
+@prefix js: <https://w3id.org/conn/js#> .
+@prefix fno: <https://w3id.org/function/ontology#> .
+@prefix fnom: <https://w3id.org/function/vocabulary/mapping#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix : <https://w3id.org/conn#> .
+@prefix sh: <http://www.w3.org/ns/shacl#> .
+
+js:Resc a js:JsProcess;
+  js:file "./test.js";
+  js:function "resc";
+  js:location <../>;
+  js:mapping [
+    a fno:Mapping;
+    fno:parameterMapping [
+      a fnom:PositionParameterMapping ;
+      fnom:functionParameter js:rescReader ;
+      fnom:implementationParameterPosition "0"^^xsd:int
+    ]
+  ].
+
+[] a sh:NodeShape;
+  sh:targetClass js:Resc;
+  sh:property [
+    sh:class :ReaderChannel;
+    sh:path js:rescReader;
+    sh:name "Channel to read from"
+  ].

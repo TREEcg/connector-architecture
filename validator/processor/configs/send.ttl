@@ -1,0 +1,37 @@
+@prefix js: <https://w3id.org/conn/js#> .
+@prefix fno: <https://w3id.org/function/ontology#> .
+@prefix fnom: <https://w3id.org/function/vocabulary/mapping#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix : <https://w3id.org/conn#> .
+@prefix sh: <http://www.w3.org/ns/shacl#> .
+
+
+
+js:Send a js:JsProcess;
+  js:file "./test.js";
+  js:function "send";
+  js:location <../>;
+  js:mapping [
+    a fno:Mapping;
+    fno:parameterMapping [
+      a fnom:PositionParameterMapping ;
+      fnom:functionParameter js:msg ;
+      fnom:implementationParameterPosition "0"^^xsd:int
+    ], [
+      a fnom:PositionParameterMapping ;
+      fnom:functionParameter js:sendWriter ;
+      fnom:implementationParameterPosition "1"^^xsd:int
+    ]
+  ].
+
+[] a sh:NodeShape;
+  sh:targetClass js:Send;
+  sh:property [
+    sh:datatype xsd:string;
+    sh:path js:msg;
+    sh:name "Message to send"
+  ], [
+    sh:class :WriterChannel;
+    sh:path js:sendWriter;
+    sh:name "Output Channel"
+  ].
