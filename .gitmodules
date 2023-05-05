@@ -17,3 +17,6 @@
 	path = processor/RINF
 	url = git@github.com:SEMICeu/RINF-LDES.git
 
+[submodule "processor/substring-bucketizer-index-proc"]
+	path = processor/substring-bucketizer-index-proc
+	url = https://github.com/jiaoxlong/substring-bucketizer-index-proc.git
