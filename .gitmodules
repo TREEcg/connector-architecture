@@ -16,10 +16,12 @@
 [submodule "processor/RINF"]
 	path = processor/RINF
 	url = https://github.com/SEMICeu/RINF-LDES.git
-
+	branch = main
 [submodule "processor/substring-bucketizer-index-proc"]
 	path = processor/substring-bucketizer-index-proc
 	url = https://github.com/jiaoxlong/substring-bucketizer-index-proc.git
+	branch = main
 [submodule "processor/rml-mapper-processor-ts"]
 	path = processor/rml-mapper-processor-ts
 	url = https://github.com/julianrojas87/rml-mapper-processor-ts.git
+	branch = main
