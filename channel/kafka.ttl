@@ -1,41 +1,42 @@
-@prefix : <https://w3id.org/conn#> .
-@prefix sh: <http://www.w3.org/ns/shacl#> .
-@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
-@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix : <https://w3id.org/conn#>.
+@prefix sh: <http://www.w3.org/ns/shacl#>.
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#>.
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#>.
+@prefix dc: <http://purl.org/dc/terms/>.
 
 :KafkaReaderChannel rdfs:subClassOf :ReaderChannel.
 :KafkaWriterChannel rdfs:subClassOf :WriterChannel.
-
 :KafkaChannel a :Channel;
-    :reader :KafkaReaderChannel;
-    :writer :KafkaWriterChannel.
-
+  dc:title "Kafka channel";
+  dc:description "Channel that uses Apache Kafka to transport messages. Comes with faul tolerance etc.";
+  :reader :KafkaReaderChannel;
+  :writer :KafkaWriterChannel.
 
 <kafkaTopicProperty> sh:datatype xsd:string;
-      sh:path :kafkaTopic;
-      sh:name "topic";
-      sh:description "Topic used".
+  sh:path :kafkaTopic;
+  sh:name "topic";
+  sh:description "Topic used".
 
 <kafkaBrokerProperty> sh:datatype xsd:string;
-      sh:path :kafkaBroker;
-      sh:name "broker";
-      sh:description "Broker used".
+  sh:path :kafkaBroker;
+  sh:name "broker";
+  sh:description "Broker used".
 
 <kafkaGroupProperty> sh:datatype xsd:string;
-      sh:path :kafkaGroup;
-      sh:name "group";
-      sh:description "Group used".
+  sh:path :kafkaGroup;
+  sh:name "group";
+  sh:description "Group used".
 
 <kafkaFromBeginningProperty> sh:datatype xsd:boolean;
-      sh:path :kafkaFromBeginning;
-      sh:name "from beginning";
-      sh:description "Should the reader read from the start or continue?".
+  sh:path :kafkaFromBeginning;
+  sh:name "from beginning";
+  sh:description "Should the reader read from the start or continue?".
 
 :KafkaReaderChannelShape a sh:NodeShape;
-    sh:targetClass :KafkaReaderChannel;
-    sh:property <kafkaTopicProperty>, <kafkaBrokerProperty>, <kafkaGroupProperty>, <kafkaFromBeginningProperty>.
+  sh:targetClass :KafkaReaderChannel;
+  sh:property <kafkaTopicProperty>, <kafkaBrokerProperty>, <kafkaGroupProperty>, <kafkaFromBeginningProperty>.
 
-:KafkaReaderChannelShape a sh:NodeShape;
-    sh:targetClass :KafkaReaderChannel;
-    sh:property <kafkaTopicProperty>, <kafkaBrokerProperty>.
+:KafkaWriterChannelShape a sh:NodeShape;
+  sh:targetClass :KafkaWriterChannel;
+  sh:property <kafkaTopicProperty>, <kafkaBrokerProperty>.
 
