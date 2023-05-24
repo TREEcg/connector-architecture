@@ -1,6 +1,6 @@
 [submodule "runner/js-runner"]
 	path = runner/js-runner
-	url = git@github.com:ajuvercr/js-runner.git
+	url = https://github.com/ajuvercr/js-runner.git
 [submodule "runner/nifi-runner"]
 	path = runner/nifi-runner
 	url = https://github.com/ajuvercr/nifi-runner
@@ -12,11 +12,16 @@
 	url = https://github.com/TREEcg/sds-storage-writer-mongo
 [submodule "processor/sds-processors"]
 	path = processor/sds-processors
-	url = git@github.com:ajuvercr/sds-processors.git
+	url = https://github.com/ajuvercr/sds-processors.git
 [submodule "processor/RINF"]
 	path = processor/RINF
-	url = git@github.com:SEMICeu/RINF-LDES.git
-
+	url = https://github.com/SEMICeu/RINF-LDES.git
+	branch = main
 [submodule "processor/substring-bucketizer-index-proc"]
 	path = processor/substring-bucketizer-index-proc
 	url = https://github.com/jiaoxlong/substring-bucketizer-index-proc.git
+	branch = main
+[submodule "processor/rml-mapper-processor-ts"]
+	path = processor/rml-mapper-processor-ts
+	url = https://github.com/julianrojas87/rml-mapper-processor-ts.git
+	branch = main

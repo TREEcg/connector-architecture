@@ -1,35 +1,36 @@
-@prefix : <https://w3id.org/conn#> .
-@prefix sh: <http://www.w3.org/ns/shacl#> .
-@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
-@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix : <https://w3id.org/conn#>.
+@prefix sh: <http://www.w3.org/ns/shacl#>.
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#>.
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#>.
+@prefix dc: <http://purl.org/dc/terms/>.
 
 :HttpReaderChannel rdfs:subClassOf :ReaderChannel.
 :HttpWriterChannel rdfs:subClassOf :WriterChannel.
-
 :HttpChannel a :Channel;
-    :reader :HttpReaderChannel;
-    :writer :HttpWriterChannel.
+  dc:title "Http Channel";
+  dc:description "Channel that posts each message to an endpoint.";
+  :reader :HttpReaderChannel;
+  :writer :HttpWriterChannel.
 
 <httpEndpointProperty> sh:datatype xsd:string;
-      sh:path :httpEndpoint;
-      sh:name "endpoint";
-      sh:description "Used endpoint".
+  sh:path :httpEndpoint;
+  sh:name "endpoint";
+  sh:description "Used endpoint".
 
 <httpPortProperty> sh:datatype xsd:number;
-      sh:path :httpPort;
-      sh:name "port";
-      sh:description "Used port".
+  sh:path :httpPort;
+  sh:name "port";
+  sh:description "Used port".
 
 <httpMethodProperty> sh:datatype xsd:number;
-      sh:path :httpMethod;
-      sh:name "method";
-      sh:description "Used method".
+  sh:path :httpMethod;
+  sh:name "method";
+  sh:description "Used method".
 
 :HttpReaderChannelShape a sh:NodeShape;
-    sh:targetClass :HttpReaderChannel;
-    sh:or ( <httpPortProperty> <httpEndpointProperty> ).
+  sh:targetClass :HttpReaderChannel;
+  sh:or ( <httpPortProperty> <httpEndpointProperty> ).
 
 :HttpWriterChannelShape a sh:NodeShape;
-    sh:targetClass :HttpWriterChannel;
-    sh:property <httpMethodProperty>, <httpEndpointProperty>.
-
+  sh:targetClass :HttpWriterChannel;
+  sh:property <httpMethodProperty>, <httpEndpointProperty>.

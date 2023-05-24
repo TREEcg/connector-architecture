@@ -1,30 +1,30 @@
-@prefix : <https://w3id.org/conn#> .
-@prefix sh: <http://www.w3.org/ns/shacl#> .
-@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
-@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix : <https://w3id.org/conn#>.
+@prefix sh: <http://www.w3.org/ns/shacl#>.
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#>.
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#>.
+@prefix dc: <http://purl.org/dc/terms/>.
 
 :WsReaderChannel rdfs:subClassOf :ReaderChannel.
 :WsWriterChannel rdfs:subClassOf :WriterChannel.
-
 :WsChannel a :Channel;
-    :reader :WsReaderChannel;
-    :writer :WsWriterChannel.
+  dc:title "Websockets channel";
+  dc:description "Channel that uses Websocket technologies to transport data. Enabling higher troughput than the HttpChannel";
+  :reader :WsReaderChannel;
+  :writer :WsWriterChannel.
 
 <wsUriProperty> sh:datatype xsd:string;
-      sh:path :wsUri;
-      sh:name "endpoint";
-      sh:description "Used endpoint".
+  sh:path :wsUri;
+  sh:name "endpoint";
+  sh:description "Used endpoint".
 
 <wsPortProperty> sh:datatype xsd:number;
-      sh:path :wsPort;
-      sh:name "port";
-      sh:description "Used port".
-
+  sh:path :wsPort;
+  sh:name "port";
+  sh:description "Used port".
 :WsReaderChannelShape a sh:NodeShape;
-    sh:targetClass :WsReaderChannel;
-    sh:or ( <wsPortProperty> <wsUriProperty> ).
+  sh:targetClass :WsReaderChannel;
+  sh:or ( <wsPortProperty> <wsUriProperty> ).
 
 :WsWriterChannelShape a sh:NodeShape;
-    sh:targetClass :WsWriterChannel;
-    sh:property <wsUriProperty>.
-
+  sh:targetClass :WsWriterChannel;
+  sh:property <wsUriProperty>.
