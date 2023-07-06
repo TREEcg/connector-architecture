@@ -1,6 +1,6 @@
 [submodule "runner/js-runner"]
 	path = runner/js-runner
-	url = https://github.com/ajuvercr/js-runner.git
+	url = https://github.com/julianrojas87/js-runner
 [submodule "runner/nifi-runner"]
 	path = runner/nifi-runner
 	url = https://github.com/ajuvercr/nifi-runner
