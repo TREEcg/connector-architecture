@@ -25,3 +25,6 @@
 	path = processor/rml-mapper-processor-ts
 	url = https://github.com/julianrojas87/rml-mapper-processor-ts.git
 	branch = main
+[submodule "processor/file-utils-processors-ts"]
+	path = processor/file-utils-processors-ts
+	url = https://github.com/julianrojas87/file-utils-processors-ts.git
