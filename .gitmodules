@@ -12,7 +12,7 @@
 	url = https://github.com/TREEcg/sds-storage-writer-mongo
 [submodule "processor/sds-processors"]
 	path = processor/sds-processors
-	url = https://github.com/ajuvercr/sds-processors.git
+	url = https://github.com/julianrojas87/sds-processors
 [submodule "processor/RINF"]
 	path = processor/RINF
 	url = https://github.com/SEMICeu/RINF-LDES.git
